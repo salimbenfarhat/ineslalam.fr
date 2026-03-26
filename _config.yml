@@ -79,3 +79,9 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projets/:path/
