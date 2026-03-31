@@ -40,8 +40,8 @@ disqus:
 google_analytics:
 
 # Your website URL
-url: "https://salimbenfarhat.github.io"
-baseurl: "/ilalam"
+url: "https://ineslalam.fr"
+baseurl: ""
 
 #
 # !! You don't need to change any of the configuration flags below !!
