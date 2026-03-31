@@ -1554,6 +1554,14 @@ section {
   color: var(--violet) !important
 }
 
+.sh-light {
+  color: var(--coral-l) !important;
+}
+
+.sh-light em {
+  color: var(--pink-l) !important;
+}
+
 .pq {
   color: #374151 !important;
   border-left-color: var(--pink) !important
@@ -2022,7 +2030,8 @@ a[href*=".pdf"]:hover {
   position: relative;
   width: 100%;
   max-width: 1000px;
-  background: var(--ink); /* Match site theme */
+  background: var(--ink);
+  /* Match site theme */
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 2px;
   overflow: hidden;
