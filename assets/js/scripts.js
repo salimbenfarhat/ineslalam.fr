@@ -1,6 +1,6 @@
 const PROJECTS = {
   redbull: {
-    img: 'assets/images/redbull.jpg',
+    img: 'assets/images/redbull.png',
     cat: 'Campagne · Conceptualisation créative',
     title: 'RedBull Advertising',
     date: 'Janvier 2025 · Sup’de Com',
@@ -18,7 +18,7 @@ const PROJECTS = {
     tags: ['Storyboarding', 'Copywriting', 'Direction artistique']
   },
   magazine: {
-    img: 'assets/images/magazine.jpg',
+    img: 'assets/images/elyseesmarbeuf.png',
     cat: 'Éditorial · Direction artistique',
     title: 'Magazine Luxe & Beauté',
     date: 'Juin 2024 · Élysées Marbeuf',
@@ -36,7 +36,7 @@ const PROJECTS = {
     tags: ['InDesign', 'Photoshop', 'Luxe']
   },
   riwaya: {
-    img: 'assets/images/riwaya.jpg',
+    img: 'assets/images/riwayatravel.png',
     cat: 'Vidéo · Scénarisation & montage',
     title: 'Riwaya Travel',
     date: 'Mars 2024 · Étude de cas',
@@ -54,7 +54,7 @@ const PROJECTS = {
     tags: ['E-commerce', 'Marketing', 'Identité Visuelle']
   },
   omycream: {
-    img: 'assets/images/omycream.jpg',
+    img: 'assets/images/ohmycream.png',
     cat: 'Community Management · Beauté Premium',
     title: 'Oh My Cream',
     date: '2024–2025',
@@ -71,7 +71,7 @@ const PROJECTS = {
     tags: ['CM', 'Copywriting', 'Brevo']
   },
   rabot: {
-    img: 'assets/images/rabot.jpg',
+    img: 'assets/images/grouperabot.png',
     cat: 'Événementiel · Communication',
     title: 'Groupe Rabot',
     date: '2025–2026',
@@ -106,7 +106,9 @@ function openProject(id) {
   cont.innerHTML = '';
   if (p.sections) {
     p.sections.forEach(s => {
-      let h = `<div style="margin-bottom:28px"><h4 style="font-family:var(--serif);font-size:18px;color:var(--dark);margin-bottom:14px;font-style:italic">${s.title}</h4><ul class="exp-ul">`;
+      let h = `<div style="margin-bottom:28px">
+        <h4 class="modal-section-title">${s.title}</h4>
+        <ul class="modal-section-list">`;
       s.items.forEach(it => { h += `<li>${it}</li>`; });
       h += `</ul></div>`;
       cont.innerHTML += h;
@@ -137,7 +139,7 @@ function openProject(id) {
     studyBtn.style.display = 'none';
   }
 
-  overlay.style.display = 'block';
+  overlay.style.display = 'flex';
   document.body.style.overflow = 'hidden';
 
   // Trigger transition
@@ -148,12 +150,19 @@ function openProject(id) {
 
 function closeProject() {
   const overlay = document.getElementById('modal-overlay');
+  if (!overlay) return;
   overlay.classList.remove('visible');
   setTimeout(() => {
     overlay.style.display = 'none';
     document.body.style.overflow = '';
   }, 300);
 }
+
+// Close on Escape
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeProject();
+});
+
 
 // Global click to close
 window.onclick = function (event) {

@@ -1994,3 +1994,120 @@ a[href*=".pdf"]:hover {
   color: var(--violet) !important;
   border-color: rgba(124, 58, 237, .35) !important
 }
+
+/* --- PROJECT MODAL --- */
+#modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(28, 26, 23, 0);
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  backdrop-filter: blur(0px);
+  transition: all 0.4s var(--ease);
+  opacity: 0;
+  pointer-events: none;
+}
+
+#modal-overlay.visible {
+  background: rgba(26, 16, 37, 0.92);
+  backdrop-filter: blur(12px);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#modal-box {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  background: var(--ink); /* Match site theme */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.5s var(--ease);
+}
+
+#modal-overlay.visible #modal-box {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+#modal-img-wrap {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  min-height: 300px;
+  background: var(--pink-pale);
+}
+
+#modal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+  display: block;
+}
+
+.modal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 520px;
+}
+
+@media (max-width: 850px) {
+  .modal-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ptag {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: .5px solid rgba(124, 58, 237, .15);
+  background: rgba(124, 58, 237, .04);
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-right: 6px;
+  margin-bottom: 6px;
+}
+
+.modal-section-title {
+  font-size: 11px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--pink);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.modal-section-list {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.modal-section-list li {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+  padding-left: 16px;
+  position: relative;
+  margin-bottom: 6px;
+}
+
+.modal-section-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 5px;
+  height: .5px;
+  background: var(--pink);
+}
