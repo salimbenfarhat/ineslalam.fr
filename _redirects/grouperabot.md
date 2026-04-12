@@ -1,4 +1,4 @@
 ---
 layout: redirect
-destination: https://ineslalam.my.canva.site/page-6
+destination: https://ineslalam.my.canva.site/groupe-rabiot
 ---

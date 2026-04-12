@@ -1,4 +1,4 @@
 ---
 layout: redirect
-destination: https://ineslalam.my.canva.site/page-12
+destination: https://ineslalam.my.canva.site/projet-riwaya-travel
 ---
